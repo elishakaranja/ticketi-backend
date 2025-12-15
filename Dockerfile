@@ -17,6 +17,7 @@ COPY . .
 
 # Expose port
 EXPOSE 8000
+ENV PYTHONPATH=/app
 
 # Run migrations and start server
 CMD flask db upgrade && gunicorn app:app --bind 0.0.0.0:8000
