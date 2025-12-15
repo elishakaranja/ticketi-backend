@@ -10,13 +10,21 @@ RUN apt-get update && apt-get install -y \
 
 # Copy and install Python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
 
-# Expose port
-EXPOSE 8000
+# Set Flask environment variables
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=production
+ENV DATABASE_URL=${DATABASE_URL}
 
-# Run migrations and start server
-CMD flask db upgrade && gunicorn app:app --bind 0.0.0.0:8000
+# Use the port Koyeb assigns
+ENV PORT=${PORT}
+
+# Run migrations first, then start server
+CMD ["sh", "-c", "flask db upgrade && gunicorn app:app --bind 0.0.0.0:$PORT"]
+
+
