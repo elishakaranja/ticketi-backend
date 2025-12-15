@@ -38,7 +38,7 @@ def create_app():
         log_handler.setLevel(logging.ERROR)
         app.logger.addHandler(log_handler)
     
-    CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "PUT", "DELETE"], "allow_headers": ["Content-Type", "Authorization"]}})
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
     # Initialize extensions
     db.init_app(app)
