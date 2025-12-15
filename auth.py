@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, current_app
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 from datetime import timedelta
-from server.models import db, User
+from models import db, User
 import re
 import os
 from werkzeug.utils import secure_filename

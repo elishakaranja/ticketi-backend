@@ -1,5 +1,5 @@
 from datetime import datetime
-from server.models import db, Event, Ticket, Transaction
+from models import db, Event, Ticket, Transaction
 
 def purchase_ticket(event_id, user_id):
     """Purchases a ticket for an event."""

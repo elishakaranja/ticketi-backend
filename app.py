@@ -9,13 +9,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
-from server.models import db, Event, User # Imported for Flask-Migrate
-from server.auth import auth_bp
-from server.events import events_bp
-from server.tickets import tickets_bp
-from server.eventbrite import eventbrite_bp
+from models import db, Event, User # Imported for Flask-Migrate
+from auth import auth_bp
+from events import events_bp
+from tickets import tickets_bp
+from eventbrite import eventbrite_bp
 
-from server.config import DevelopmentConfig, ProductionConfig, TestingConfig
+from config import DevelopmentConfig, ProductionConfig, TestingConfig
 
 def create_app():
     app = Flask(__name__)

@@ -9,8 +9,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from datetime import datetime, timedelta
 import random
-from server.models import db, User, Event, Ticket, Transaction
-from server.app import create_app
+from models import db, User, Event, Ticket, Transaction
+from app import create_app
 
 # Authentic Kenyan Events Database
 KENYAN_EVENTS = [

@@ -1,9 +1,9 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from datetime import datetime
-from server.models import db, Event, Ticket, Transaction, User
+from models import db, Event, Ticket, Transaction, User
 from sqlalchemy import and_
-from server.services.ticket_service import purchase_ticket as purchase_ticket_service, resell_ticket as resell_ticket_service, purchase_resale_ticket as purchase_resale_ticket_service, cancel_resale as cancel_resale_service
+from services.ticket_service import purchase_ticket as purchase_ticket_service, resell_ticket as resell_ticket_service, purchase_resale_ticket as purchase_resale_ticket_service, cancel_resale as cancel_resale_service
 
 tickets_bp = Blueprint('tickets', __name__)
 

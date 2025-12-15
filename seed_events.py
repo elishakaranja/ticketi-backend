@@ -13,8 +13,8 @@ from datetime import datetime, timedelta
 from random import randint, choice
 
 # Now import with server prefix
-from server.app import create_app
-from server.models import db, User, Event, Ticket, Transaction
+from app import create_app
+from models import db, User, Event, Ticket, Transaction
 
 # Kenyan event data with real locations
 KENYAN_EVENTS = [

@@ -4,7 +4,7 @@ Provides access to Eventbrite events data
 """
 
 from flask import Blueprint, jsonify, request
-from server.services.eventbrite_service import eventbrite_service
+from services.eventbrite_service import eventbrite_service
 
 eventbrite_bp = Blueprint('eventbrite', __name__)
 
@@ -89,7 +89,7 @@ def get_mixed_events():
     Prioritizes Kenya/Nairobi events
     Query params: same as /events endpoint
     """
-    from server.models import Event as LocalEvent
+    from models import Event as LocalEvent
     
     # Get query params
     location = request.args.get('location', 'Nairobi, Kenya')

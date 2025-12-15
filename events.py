@@ -1,9 +1,9 @@
 from flask import Blueprint, request, jsonify, current_app
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from datetime import datetime
-from server.models import db, Event, Ticket, User
+from models import db, Event, Ticket, User
 from sqlalchemy import or_
-from server.services.event_service import create_event as create_event_service, update_event as update_event_service, delete_event as delete_event_service
+from services.event_service import create_event as create_event_service, update_event as update_event_service, delete_event as delete_event_service
 
 events_bp = Blueprint('events', __name__)
 

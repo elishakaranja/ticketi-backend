@@ -1,7 +1,7 @@
 import pytest
-from server.app import create_app
-from server.models import db as sqlalchemy_db
-from server.config import TestingConfig
+from app import create_app
+from models import db as sqlalchemy_db
+from config import TestingConfig
 
 @pytest.fixture
 def app():

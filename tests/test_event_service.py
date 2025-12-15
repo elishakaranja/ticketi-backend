@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
-from server.services.event_service import create_event
-from server.models import User, Event, Ticket
+from services.event_service import create_event
+from models import User, Event, Ticket
 
 def test_create_event(app, db):
     """Test creating a new event."""

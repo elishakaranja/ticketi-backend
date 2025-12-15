@@ -1,5 +1,5 @@
 from datetime import datetime
-from server.models import db, Event, Ticket
+from models import db, Event, Ticket
 
 def create_event(data, user_id):
     """Creates a new event and its associated tickets."""
